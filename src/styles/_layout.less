@@ -1,0 +1,91 @@
+// header
+.header{
+	.top-nav-wrap{
+		align-items: center;
+	}
+
+	.header-server{
+		width: 100%;
+		position: relative;
+	}
+
+	// app-icons
+	.app-icons{
+		padding: 10px;
+
+		.ant-col-6{
+			width: auto;
+			padding: 15px;
+
+			>span{
+				display:inline-block;
+				height: 50px;
+				width: 50px;
+				border-radius: 50%;
+				line-height: 50px;
+
+				>i{
+					padding: 0;
+					display: inline-block;
+					vertical-align: middle;
+				}
+			}
+		}
+
+	}
+}
+
+// 左导航
+.aside{
+	.nav{
+		>li{
+			>a{
+				i{
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+}
+.aside-collapsed .nav:not(.nav-sub) > li > a{
+	padding: 10px 0;
+}
+
+
+// 弹出框修复
+.ant-modal-wrap{
+	overflow: initial;
+}
+
+.content__title{
+	background-color: #fff;
+}
+
+
+// nz-tabset 导航tab控制，前台隐藏
+
+.reuse-tab-hide {
+	.content{
+		margin-top: @headerHeight;
+	}
+	
+	reuse-tab{
+		padding: 0 24px;
+	
+		&.fixed{
+			z-index: -1;
+			visibility: hidden;
+		}
+	
+		.ant-tabs-nav-wrap{
+			margin-bottom: 0 !important;
+		}
+	}
+}
+
+
+@media (max-width: 991px){
+	reuse-tab.fixed {
+		top: -32px;
+	}
+}

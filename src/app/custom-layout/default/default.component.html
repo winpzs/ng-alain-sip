@@ -1,0 +1,9 @@
+<div class="wrapper reuse-tab-hide">
+    <div class="router-progress-bar" *ngIf="isFetching"></div>
+    <app-header class="header"></app-header>
+    <app-sidebar class="aside"></app-sidebar>
+    <section class="content">
+        <reuse-tab #tab></reuse-tab>
+        <router-outlet></router-outlet>
+    </section>
+</div>

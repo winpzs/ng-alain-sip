@@ -1,0 +1,19 @@
+<sip-modal width="500px" height="300px">
+  <sip-modal-header>
+    <span>使用模板 - [ {{params.id}} ]</span>
+  </sip-modal-header>
+  <sip-modal-body>
+    <div style="width:1000px">
+      <p>对话框的内容</p>
+      <p>对话框的内容</p>
+      <p>对话框的内容</p>
+      <p>对话框的内容</p>
+      <p>对话框的内容</p>
+    </div>
+  </sip-modal-body>
+  <sip-modal-footer>
+      <button nz-button [nzType]="'primary'" [nzSize]="'large'" (click)="save($event)" [nzLoading]="false">
+        提 交
+      </button>
+  </sip-modal-footer>
+</sip-modal>

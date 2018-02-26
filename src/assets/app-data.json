@@ -1,0 +1,65 @@
+{
+    "app": {
+        "name": "New Design",
+        "description": "开箱即用的中台前端/设计解决方案"
+    },
+    "user": {
+        "name": "管理员",
+        "avatar": "./assets/img/user.png",
+        "email": "admin@admin.com"
+    },
+    "menu": [{
+        "text": "云服务",
+        "translate": "main_navigation",
+        "group": true,
+        "children": [
+		{
+			"text": "ServerList",
+            "translate": "服务目录",
+            "link": "/sip/ui-demo/server-list",
+            "icon": "anticon anticon-appstore-o"
+		},{
+            "text": "sip_ui",
+            "translate": "实例",
+            "link": "/sip/iaas",
+            "icon": "anticon anticon-desktop",
+            "children": [{
+                "text": "实例列表",
+                "link": "/sip/online/iaas/instance-list",
+                "translate": "列表",
+                "description":""
+            },{
+                "text": "实例申请",
+                "link": "/sip/online/iaas/instance-create",
+                "translate": "实例申请",
+                "description":""
+            }]
+        },{
+            "text": "demo_ui",
+            "translate": "UIDemo",
+            "link": "/sip/ui-demo",
+            "icon": "anticon anticon-usb",
+            "children": [{
+                "text": "表格",
+                "link": "/sip/ui-demo/table",
+                "translate": "表格",
+                "description":""
+            },{
+                "text": "基本表单",
+                "link": "/sip/ui-demo/baseform",
+                "translate": "基本表单",
+                "description":"基本表单 description"
+            },{
+                "text": "实例列表1",
+                "link": "/sip/ui-demo/list",
+                "translate": "实例列表1",
+                "description":""
+            },{
+                "text": "申请实例",
+                "link": "/sip/ui-demo/instance-create",
+                "translate": "申请实例",
+                "description":""
+            }]
+        }]
+    }]
+}
