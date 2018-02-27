@@ -33,9 +33,9 @@ gulp.task('build', function () {
     }).then(function (bundle) {
         bundle.write({
             format: "umd",
-            moduleName: "cmpxs.cmpx",
+            // moduleName: "cmpxs.cmpx",
             dest: "./dist/bundles/cmpx.umd.js",
-            file: 'acl.umd.js',
+            file: './dist/bundles/index.umd.js',
             name: 'sip.test',
             sourceMap: true,
             globals: globals
