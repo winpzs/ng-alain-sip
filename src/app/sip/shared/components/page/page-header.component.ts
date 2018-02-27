@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ContentChild, TemplateRef, Optional } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { ReuseTabService } from '@delon/abc';
-import { PageComponent } from '@sip/sip-shared/components/page/page.component';
+import { PageComponent } from './page.component';
 
 @Component({
     selector: 'sip-page-header',

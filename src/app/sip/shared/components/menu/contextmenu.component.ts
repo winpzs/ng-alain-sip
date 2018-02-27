@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild, ViewContainerRef, TemplateRef, ComponentRef, Input, ViewRef, EventEmitter, Output } from '@angular/core';
-import { EventAfterViewInit, EventDestroy } from '@sip/sip-core/extends/decorators';
-import { Lib } from '@sip/sip-core/extends/lib';
 import { IMenuItem } from './menu-item';
-import { SipAppContainerService } from '../../../../../custom-layout/sip/core/services/sip-app-container.service';
+import { SipAppContainerService } from '../../../../custom-layout/sip/core/services/sip-app-container.service';
+import { EventAfterViewInit, EventDestroy } from '../../../core/extends/decorators';
+import { Lib } from '../../../core/extends/lib';
 
 export interface IContextMenu {
     width?: string;

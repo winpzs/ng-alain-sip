@@ -6,11 +6,6 @@ import { SipCacheService } from './sip-cache.service';
 import { SipRestService } from './sip-rest.service';
 import { SipEventService } from './sip-event.service';
 
-export * from './sip-config.service';
-export * from './sip-cache.service';
-export * from './sip-rest.service';
-export * from './sip-event.service';
-
 @NgModule({
     imports: [
         CommonModule,

@@ -1,5 +1,5 @@
 import { Component, Input, TemplateRef, ContentChild } from '@angular/core';
-import { Lib } from '@sip/sip-core/extends/lib';
+import { Lib } from '../../../core/extends/lib';
 
 @Component({
 	selector: 'sip-minicolumn',

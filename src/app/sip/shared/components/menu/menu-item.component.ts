@@ -1,6 +1,6 @@
 import { Component, Input, Optional, EventEmitter, Output } from '@angular/core';
 import { MenuChildren } from './menu-children';
-import { IMenuItem } from '@sip/sip-shared/components/menu/menu-item';
+import { IMenuItem } from './menu-item';
 
 @Component({
 	selector: 'sip-menu-item',

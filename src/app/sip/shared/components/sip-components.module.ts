@@ -22,25 +22,6 @@ import { SharedModule } from '@shared/shared.module';
 import { CardComponent } from './card/card.component';
 import { SearchConentComponent } from './searchConent.component';
 
-export * from './menu/contextmenu.component';
-export * from './menu/menu-group.component';
-export * from './menu/menu-item-divider.component';
-export * from './menu/menu-item.component';
-export * from './menu/menu-sub.component';
-export * from './menu/menu.component';
-export * from './menu/menu-item';
-export * from './minitable/minicolumn.component';
-export * from './minitable/minitable.component';
-export * from './modal/modal-body.component';
-export * from './modal/modal-footer.component';
-export * from './modal/modal-header.component';
-export * from './modal/modal.component';
-export * from './page/page-body.component';
-export * from './page/page-header.component';
-export * from './page/page-toolbar.component';
-export * from './page/page.component';
-export * from './searchConent.component';
-
 @NgModule({
     imports: [
         CommonModule,

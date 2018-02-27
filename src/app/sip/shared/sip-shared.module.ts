@@ -13,10 +13,11 @@ import { SipComponentsModule } from './components/sip-components.module';
     ],
     declarations: [],
     providers: [],
-    exports:[SharedModule,
+    exports: [
+        SharedModule,
         SipDirectivesModule,
         SipComponentsModule
     ],
-    entryComponents:[]
+    entryComponents: []
 })
 export class SipSharedModule { }

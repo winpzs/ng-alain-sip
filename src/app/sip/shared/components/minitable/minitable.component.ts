@@ -3,10 +3,9 @@ import { Observable } from 'rxjs/Observable';
 
 import { MinicolumnComponent } from './minicolumn.component';
 import { ContextmenuComponent, IContextMenu } from '../menu/contextmenu.component';
-import { SipRestService, SipRestSqlRet } from '@sip/sip-core/services/sip-rest.service';
-import { SipConfigService } from '@sip/sip-core/services/sip-config.service';
-import { Lib } from '../../../sip-core/extends/lib';
-import { SipComponent, SipInject, SipNgInit, SipNgDestroy } from '../../../sip-core/extends/sip-helper';
+import { Lib } from '../../../core/extends/lib';
+import { SipComponent, SipNgDestroy, SipNgInit } from '../../../core/extends/sip-helper';
+import { SipRestSqlRet } from '../../../core/services/sip-rest.service';
 
 export interface MiniTableRow<T=any> {
     /**是否选择 */
@@ -281,7 +280,61 @@ export class MinitableManager<T=any> implements IMinitableManager<T> {
 
 @Component({
     selector: 'sip-minitable',
-    templateUrl: './minitable.component.html',
+    templateUrl: `<nz-table #nzTable [nzAjaxData]="rows" [nzSize]="'middle'" [nzIsPagination]="false" [nzLoading]="_loading" [nzTotal]="total" [(nzPageIndex)]="pageIndex"
+    (nzPageIndexChange)="_load()" [(nzPageSize)]="pageSize" (nzPageSizeChange)="_load()">
+    <thead nz-thead>
+        <tr>
+            <th nz-th *ngIf="multiSelect" [nzCheckbox]="true" [nzWidth]="'20px'">
+                <label nz-checkbox [(ngModel)]="_allSelected" [nzIndeterminate]="_indeterminate" (ngModelChange)="_tiggerRowSelAll()">
+                </label>
+            </th>
+            <th nz-th *ngFor="let column of columnQueryList" [nzWidth]="column.width">
+                <span>
+                    {{column.title || column.name}}
+                </span>
+                <nz-table-sort *ngIf="column.sortable"  [(nzValue)]="column._sortOrder" (nzValueChange)="_sortIn($event)"></nz-table-sort>
+                <nz-dropdown [nzTrigger]="'click'" *ngIf="column.filterItems" >
+                    <i class="anticon anticon-filter" nz-dropdown></i>
+                    <ul nz-menu>
+                        <li nz-menu-item *ngFor="let filter of column.filterItems">
+                            <label nz-checkbox [(ngModel)]="filter._filtersel">
+                                <span>{{filter[column.filterText]}}</span>
+                            </label>
+                        </li>
+                    </ul>
+                    <div nz-table-filter class="text-center">
+                        <span nz-table-filter-confirm (click)="_filter(column)">确定</span>
+                        <span nz-table-filter-clear >取消</span>
+                    </div>
+                </nz-dropdown>
+            </th>
+        </tr>
+    </thead>
+    <tbody nz-tbody>
+        <tr nz-tbody-tr *ngFor="let row of nzTable.data">
+            <td nz-td [nzCheckbox]="true" *ngIf="multiSelect">
+                <label nz-checkbox [(ngModel)]="row.selected" (ngModelChange)="_refChecked()">
+                </label>
+            </td>
+            <td nz-td *ngFor="let column of columnQueryList" (mousedown)="_tiggerRowSel(row, $event)">
+                <ng-template [ngIf]="(column.isEdit && row.isEdit)">
+                    <nz-input *ngIf="!column.editor" [(ngModel)]="row.data[column.name]"></nz-input>
+                    <ng-container *ngIf="column.editor" [ngTemplateOutlet]="column.editor" [ngTemplateOutletContext]="{row:row, column:column, data:row.data}"></ng-container>
+                </ng-template>
+                <ng-template [ngIf]="!(column.isEdit && row.isEdit)">
+                    <span *ngIf="!column.formatter">{{row.data[column.name]}}</span>
+                    <ng-container *ngIf="column.formatter" [ngTemplateOutlet]="column.formatter" [ngTemplateOutletContext]="{row:row, column:column, data:row.data}"></ng-container>
+                </ng-template>
+            </td>
+        </tr>
+    </tbody>
+    <sip-contextmenu *ngIf="_hasContextmenu" (onShow)="_showContextmenu($event)"></sip-contextmenu>
+    </nz-table>
+    <div class="mt-lg">
+        <nz-pagination [(nzPageIndex)]="pageIndex" [(nzTotal)]="total" [(nzPageSize)]="pageSize"
+            (nzPageIndexChange)="_changePageIndex()" (nzPageSizeChange)="_load()" [nzShowSizeChanger]="true">
+        </nz-pagination>		
+    </div>`,
     providers: [],
     styles: []
 })
@@ -327,7 +380,7 @@ export class MinitableComponent extends SipComponent {
             this._hasContextmenu = !!manager.contextmenu;
             //第一次加载数据
             manager.autoLoad && this._load();
-        } else{
+        } else {
             //第一次加载数据
             this._load();
         }

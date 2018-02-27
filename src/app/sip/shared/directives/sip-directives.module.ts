@@ -6,8 +6,6 @@ import { SharedModule } from '@shared/shared.module';
 import { RouterLinkDirective } from './router-link.directive';
 import { AccessDirective } from './access.directive';
 
-export * from './show.directive';
-
 @NgModule({
     imports: [
         CommonModule,

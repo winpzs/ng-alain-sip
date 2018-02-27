@@ -1,5 +1,5 @@
 import { Directive, ViewContainerRef, Input, HostListener } from '@angular/core';
-import { SipDirective } from '../../sip-core/extends/sip-helper';
+import { SipDirective } from '../../core/extends/sip-helper';
 
 @Directive({
     selector: '[sipRouterLink]'

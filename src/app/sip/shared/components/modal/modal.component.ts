@@ -3,8 +3,8 @@ import { NzModalService, NzModalSubject } from 'ng-zorro-antd';
 import { ModalHeaderComponent } from './modal-header.component';
 import { ModalBodyComponent } from './modal-body.component';
 import { ModalFooterComponent } from './modal-footer.component';
-import { SipComponent, SipNgInit, SipModal, SipSubscribe, SipNgDestroy, SipInject } from '../../../sip-core/extends/sip-helper';
 import { Observable } from 'rxjs/Observable';
+import { SipComponent, SipInject, SipNgInit, SipSubscribe, SipNgDestroy } from '../../../core/extends/sip-helper';
 
 @Component({
     selector: 'sip-modal',

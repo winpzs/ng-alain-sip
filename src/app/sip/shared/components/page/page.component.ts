@@ -1,8 +1,8 @@
 import { Component, ViewContainerRef, Optional, ContentChild } from '@angular/core';
 
-import { SipComponent, SipInject, SipNgInit } from '../../../sip-core/extends/sip-helper';
 import { ReuseTabService } from '@delon/abc';
 import { PageBodyComponent } from './page-body.component';
+import { SipComponent, SipInject, SipNgInit } from '../../../core/extends/sip-helper';
 
 @Component({
     selector: 'sip-page',

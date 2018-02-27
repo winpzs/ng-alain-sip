@@ -1,5 +1,5 @@
 import { Directive, Optional, Input, HostBinding, ElementRef } from '@angular/core';
-import { SipBusinessComponent, SipAccessManager, ISipAccessParams } from '../../sip-core/extends/sip-helper';
+import { SipBusinessComponent, SipAccessManager } from '../../core/extends/sip-helper';
 
 @Directive({
     selector: '[sipAccess]'
