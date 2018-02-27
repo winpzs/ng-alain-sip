@@ -26,9 +26,12 @@
         "node_modules",
         "dist",
         "_mock",
+        "e2e",
         "./*.*",
-        "test",
-        "src/__test__/**",
-        "src/output/**"
+        "./src/*.*",
+        "./src/assets/**",
+        "./src/environments/**",
+        "./src/styles/**",
+        "./src/testing/**"
     ]
 }

@@ -29,6 +29,7 @@
   ],
   "include": [
     "**/*.spec.ts",
-    "**/*.d.ts"
+    "**/*.d.ts",
+    "./src/app/delon/**"
   ]
 }

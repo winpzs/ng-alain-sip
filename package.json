@@ -28,7 +28,7 @@
     "test": "ng test -sr -sm=false",
     "test-coverage": "ng test -sr -cc -sm=false",
     "siptsc": "tsc -p .",
-    "sipbuild": "rimraf dist && gulp build"
+    "sipbuild": "rimraf dist && gulp build && rimraf dist/src"
   },
   "dependencies": {
     "@angular/animations": "^5.0.0",

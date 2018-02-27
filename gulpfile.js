@@ -37,6 +37,8 @@ gulp.task('build', function () {
             name: 'sip.test',
             sourceMap: true
             //globals: globals
+        }).then(function(){
+            gulp.src('./dist/src/app/sip/**').pipe(gulp.dest('./dist'));
         });
     })
 });
