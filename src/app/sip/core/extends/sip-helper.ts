@@ -527,7 +527,7 @@ export enum SipRestSqlType {
     EntityEx = 'EntityEx'
 }
 
-interface ISipRestDefParamsBase<T> {
+export interface ISipRestDefParamsBase<T> {
     url?: string;
     params?: any;
     httpOptions?: SipHttpOptions;
@@ -539,7 +539,7 @@ interface ISipRestDefParamsBase<T> {
     map?: (rs: SipRestRet<T>) => SipRestRet<T>;
 }
 
-export interface ISipRestDefParams<T> extends ISipRestDefParamsBase<T> {
+export interface ISipRestDefParams<T=any> extends ISipRestDefParamsBase<T> {
     method?: SipRestMethod;
 }
 

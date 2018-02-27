@@ -4,12 +4,30 @@ var gulp = require('gulp'),
     rollup = require('rollup'),
     rollupTypescript = require('rollup-plugin-typescript2');
 
+const globals = {
+    '@angular/core': 'ng.core',
+    '@angular/common': 'ng.common',
+    '@angular/platform-browser': 'ng.platformBrowser',
+    '@angular/router': 'ng.router',
+
+    'ng-zorro-antd': 'ngZorro.antd',
+
+    'rxjs/Observable': 'Rx',
+    'rxjs/Observer': 'Rx',
+    'rxjs/BehaviorSubject': 'Rx',
+    'rxjs/operators': 'Rx.Observable.prototype',
+    'rxjs/observable/of': 'Rx.Observable',
+    'rxjs/observable/fromEvent': 'Rx.Observable',
+    'rxjs/observable/FromEventObservable': 'Rx.Observable',
+    'rxjs/observable/ErrorObservable': 'Rx.Observable'
+};
+
 gulp.task('build', function () {
     return rollup.rollup({
         input: "./src/app/sip/index.ts",
         plugins: [
             rollupTypescript({
-                tsconfig: './tsconfig.json'
+                tsconfig: './tsconfig-build.json'
             })
         ]
     }).then(function (bundle) {
@@ -17,7 +35,10 @@ gulp.task('build', function () {
             format: "umd",
             moduleName: "cmpxs.cmpx",
             dest: "./dist/bundles/cmpx.umd.js",
-            sourceMap: true
+            file: 'acl.umd.js',
+            name: 'sip.test',
+            sourceMap: true,
+            globals: globals
         });
     })
 });

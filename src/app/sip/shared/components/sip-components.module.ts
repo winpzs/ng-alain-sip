@@ -18,14 +18,12 @@ import { PageBodyComponent } from './page/page-body.component';
 import { PageHeaderComponent } from './page/page-header.component';
 import { PageToolbarComponent } from './page/page-toolbar.component';
 import { PageComponent } from './page/page.component';
-import { SharedModule } from '@shared/shared.module';
 import { CardComponent } from './card/card.component';
 import { SearchConentComponent } from './searchConent.component';
 
 @NgModule({
     imports: [
         CommonModule,
-        SharedModule,
         SipDirectivesModule
     ],
     declarations: [

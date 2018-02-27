@@ -167,7 +167,7 @@ import { AlainAuthModule } from '@delon/auth';
 import { AlainACLModule } from '@delon/acl';
 import { DelonCacheModule } from '@delon/cache';
 
-export const ABCMODULESforRoot = function () {
+export const ABCMODULESforRoot = function ():any[] {
     return [
         NgZorroAntdModule.forRoot(),
         NgZorroAntdExtraModule.forRoot(),

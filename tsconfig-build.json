@@ -3,7 +3,7 @@
         "declaration": true,
         "module": "es2015",
         "target": "es5",
-        "moduleResolution":"node",
+        "moduleResolution": "node",
         "noImplicitAny": false,
         "sourceMap": true,
         "allowJs": false,
@@ -14,9 +14,21 @@
         "experimentalDecorators": true,
         "outDir": "./dist",
         "baseUrl": "./src",
-        "rootDir": "."
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "lib": [
+            "es2017",
+            "dom"
+        ]
     },
     "exclude": [
-        "node_modules", "dist", "_mock", "./*.*", "test", "src/__test__/**", "src/output/**"
+        "node_modules",
+        "dist",
+        "_mock",
+        "./*.*",
+        "test",
+        "src/__test__/**",
+        "src/output/**"
     ]
 }
