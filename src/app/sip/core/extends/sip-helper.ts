@@ -1,7 +1,5 @@
 import { ViewContainerRef, Injector, Type, ComponentRef, ComponentFactoryResolver, TemplateRef, ViewRef, forwardRef, EventEmitter } from "@angular/core";
 import { ActivatedRoute, ActivatedRouteSnapshot, Router } from "@angular/router";
-import { SipConfigService } from "@sip/sip-core/services/sip-config.service";
-import { SipEventService } from "@sip/sip-core/services/sip-event.service";
 import { Observable } from "rxjs/Observable";
 import { Subscription } from "rxjs/Subscription";
 import { Lib } from './lib';
@@ -10,10 +8,10 @@ import { MenuService, Menu } from "@delon/theme";
 import { Subject } from "rxjs/Subject";
 import { HttpHeaders, HttpParams } from "@angular/common/http";
 import { map } from 'rxjs/operators';
-import { SipLayout } from '../../../../custom-layout/sip/sip-layout';
-import { SipAppContainerService } from '../../../../custom-layout/sip/core/services/sip-app-container.service';
 import { ReuseTabService } from "@delon/abc";
 import { FormBuilder, FormGroup } from "@angular/forms";
+import { SipConfigService } from '../services/sip-config.service';
+import { SipEventService } from '../services/sip-event.service';
 
 let undef;
 
@@ -1053,8 +1051,8 @@ export class SipUiBase extends SipParent {
     */
     $appendTemplate(tmpl: TemplateRef<any>, context?: any, isLayout?: boolean): ViewRef {
         if (isLayout) {
-            let appContainer: SipAppContainerService = this.$injector(SipAppContainerService);
-            if (appContainer) return appContainer.appendTemplate(tmpl, context);
+            // let appContainer: SipAppContainerService = this.$injector(SipAppContainerService);
+            // if (appContainer) return appContainer.appendTemplate(tmpl, context);
         } else {
             let view = this.$vcf.insert(tmpl.createEmbeddedView(context))
             return view;
@@ -1069,8 +1067,8 @@ export class SipUiBase extends SipParent {
      */
     $appendComponent<T>(type: Type<T>, params?: Object, isLayout?: boolean): ComponentRef<T> {
         if (isLayout) {
-            let appContainer: SipAppContainerService = this.$injector(SipAppContainerService);
-            if (appContainer) return appContainer.appendComponent(type, params, this.$injector(ComponentFactoryResolver));
+            // let appContainer: SipAppContainerService = this.$injector(SipAppContainerService);
+            // if (appContainer) return appContainer.appendComponent(type, params, this.$injector(ComponentFactoryResolver));
         } else {
             let cfr: ComponentFactoryResolver = this.$injector(ComponentFactoryResolver);
             let componentFactory = cfr.resolveComponentFactory(type);
@@ -1333,18 +1331,18 @@ export class SipPage extends SipBusinessComponent {
         if (arguments.length > 0)
             this.$uiLink.publish(p);
 
-        let layout: SipLayout = this.$injector(SipLayout);
-        if (!layout || !layout.tab) return;
-        let url = this.$url;
-        let tab = layout.tab;
-        let index = tab._list.findIndex(function (item) { return item && item.url == url; });
-        if (index > -1) tab.remove(index);
+        // let layout: SipLayout = this.$injector(SipLayout);
+        // if (!layout || !layout.tab) return;
+        // let url = this.$url;
+        // let tab = layout.tab;
+        // let index = tab._list.findIndex(function (item) { return item && item.url == url; });
+        // if (index > -1) tab.remove(index);
     }
 
     $closeOther() {
-        let layout: SipLayout = this.$injector(SipLayout);
-        if (!layout || !layout.tab) return;
-        layout.tab.clear();
+        // let layout: SipLayout = this.$injector(SipLayout);
+        // if (!layout || !layout.tab) return;
+        // layout.tab.clear();
     }
 
     public get $isChild(): boolean {
