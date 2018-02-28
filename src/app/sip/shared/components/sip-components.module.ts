@@ -20,10 +20,12 @@ import { PageToolbarComponent } from './page/page-toolbar.component';
 import { PageComponent } from './page/page.component';
 import { CardComponent } from './card/card.component';
 import { SearchConentComponent } from './searchConent.component';
+import { DelonSharedModule } from '../../delon/delon-shared.module';
 
 @NgModule({
     imports: [
         CommonModule,
+        DelonSharedModule,
         SipDirectivesModule
     ],
     declarations: [

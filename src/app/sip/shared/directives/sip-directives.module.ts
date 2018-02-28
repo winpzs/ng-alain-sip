@@ -4,10 +4,12 @@ import { CommonModule } from '@angular/common';
 import { ShowDirective } from './show.directive';
 import { RouterLinkDirective } from './router-link.directive';
 import { AccessDirective } from './access.directive';
+import { DelonSharedModule } from '../../delon/delon-shared.module';
 
 @NgModule({
     imports: [
-        CommonModule
+        CommonModule,
+        DelonSharedModule
     ],
     declarations: [
         ShowDirective,

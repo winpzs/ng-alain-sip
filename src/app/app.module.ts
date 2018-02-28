@@ -3,7 +3,6 @@ import { HttpClient, HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { DelonModule } from './delon.module';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';

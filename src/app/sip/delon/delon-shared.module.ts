@@ -6,8 +6,7 @@ import { RouterModule } from '@angular/router';
 import { NgZorroAntdExtraModule } from 'ng-zorro-antd-extra';
 import { AlainThemeModule } from '@delon/theme';
 import { AlainACLModule } from '@delon/acl';
-// sip
-import { ZORROMODULES, ABCMODULES } from '../sip';
+import { ZORROMODULES, ABCMODULES } from './delon.module';
 // i18n
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -58,4 +57,4 @@ const DIRECTIVES = [];
         ...DIRECTIVES
     ]
 })
-export class SharedModule { }
+export class DelonSharedModule { }
