@@ -20,4 +20,4 @@ import { DelonSharedModule } from '../delon/delon-shared.module';
     ],
     entryComponents: []
 })
-export class SipSharedModule { }
+export class SipAlainSharedModule { }

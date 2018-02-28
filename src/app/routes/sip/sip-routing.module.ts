@@ -6,10 +6,6 @@ import { SipModule } from './sip.module';
 
 const routes: Routes = [
     {
-        path: 'online',
-        loadChildren: './online/online-routing.module#OnlineRoutingModule'
-    },
-    {
         path: 'ui-demo',
         loadChildren: './ui-demo/ui-demo-routing.module#UiDemoRoutingModule'
     }

@@ -1,6 +1,3 @@
-import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { ModuleWithProviders } from '@angular/compiler/src/core';
-import { DelonModule } from './delon/delon.module';
 
 export * from './core/extends/lib';
 export * from './core/extends/rxjs';
@@ -32,28 +29,6 @@ export * from './shared/components/page/page-toolbar.component';
 export * from './shared/components/page/page.component';
 export * from './shared/components/searchConent.component';
 
-export * from './core/sip-core.module';
-export * from './shared/sip-shared.module';
-
-@NgModule({
-    imports: [
-        DelonModule
-    ],
-    exports:[
-        DelonModule
-    ]
-})
-export class SipAlainModule {
-    constructor(@Optional() @SkipSelf() parentModule: SipAlainModule) {
-        if (parentModule) {
-            throw new Error(`SipAlainModule has already been loaded. Import Core modules in the AppModule only.`);
-        }
-    }
-
-    static forRoot(): ModuleWithProviders {
-        return {
-            ngModule: SipAlainModule,
-            providers: []
-        };
-    }
-}
+export * from './core/sip-alain-core.module';
+export * from './shared/sip-alain-shared.module';
+export * from './sip-alain.module';

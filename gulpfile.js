@@ -24,7 +24,7 @@ var gulp = require('gulp'),
 
 gulp.task('build', function () {
     return rollup.rollup({
-        input: "./src/app/sip/index.ts",
+        input: "./src/app/sip-alain/index.ts",
         plugins: [
             rollupTypescript({
                 tsconfig: './tsconfig-build.json'
@@ -34,11 +34,11 @@ gulp.task('build', function () {
         bundle.write({
             format: "umd",
             file: './dist/index.js',
-            name: 'sip.test',
+            name: 'sip-alain',
             sourceMap: true
             //globals: globals
         }).then(function(){
-            gulp.src('./dist/src/app/sip/**').pipe(gulp.dest('./dist'));
+            gulp.src('./dist/sip-alain/**').pipe(gulp.dest('./dist'));
         });
     })
 });

@@ -32,6 +32,13 @@
         "./src/assets/**",
         "./src/environments/**",
         "./src/styles/**",
-        "./src/testing/**"
+        "./src/testing/**",
+        "./src/app/*.*",
+        "./src/app/core/**",
+        "./src/app/shared/**",
+        "./src/app/delon/**",
+        "./src/app/routes/**",
+        "./src/app/layout/**",
+        "./src/app/custom-layout/**"
     ]
 }

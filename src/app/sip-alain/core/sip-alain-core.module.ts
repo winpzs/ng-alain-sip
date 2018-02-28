@@ -16,4 +16,4 @@ import { ServicesModule } from './services/services.module';
     ],
     entryComponents: []
 })
-export class SipCoreModule { }
+export class SipAlainCoreModule { }

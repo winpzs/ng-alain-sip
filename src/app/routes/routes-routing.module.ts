@@ -6,7 +6,6 @@ import { LayoutDefaultComponent } from '../custom-layout/default/default.compone
 import { environment } from '@env/environment';
 import { LayoutFullScreenComponent } from '../custom-layout/fullscreen/fullscreen.component';
 import { LayoutPassportComponent } from '../custom-layout/passport/passport.component';
-import { SipCoreModule } from '@sip/sip-core/sip-core.module';
 // import { ReuseTabLayoutComponent } from '../custom-layout/reuse-tab/reuseTab-layout.component';
 
 const routes: Routes = [
@@ -46,7 +45,6 @@ const routes: Routes = [
     imports: [
         CommonModule,
         SharedModule,
-        SipCoreModule,
         RouterModule.forRoot(routes, { useHash: environment.useHash })
     ]
 })

@@ -21,6 +21,7 @@ import { ALAIN_I18N_TOKEN } from '@delon/theme';
 import { I18NService } from '@core/i18n/i18n.service';
 import { RoutesRoutingModule } from '@routes/routes-routing.module';
 import { CustomLayoutModule } from './custom-layout/custom-layout.module';
+import { SipAlainModule } from './sip-alain';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -39,7 +40,7 @@ export function StartupServiceFactory(startupService: StartupService): Function 
         BrowserModule,
         BrowserAnimationsModule,
         HttpClientModule,
-        DelonModule.forRoot(),
+        SipAlainModule.forRoot(),
         CoreModule,
         SharedModule,
         LayoutModule,
