@@ -6,6 +6,8 @@ export abstract class SipAlainConfig {
     i18n: {
         prefix: string;
         suffix: string;
+        default:string;
+        langs:{ code: string; text: string; }[];
     };
     i18nLoader: (http: HttpClient)=> any;
     appDataPath: string;

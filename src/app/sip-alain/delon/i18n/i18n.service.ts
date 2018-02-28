@@ -4,23 +4,24 @@ import { zhCN, enUS, NzLocaleService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { SettingsService, AlainI18NService } from '@delon/theme';
 import { Observable } from 'rxjs/Observable';
+import { SipAlainConfig } from '../../core/extends/sip-alain-config';
 
 @Injectable()
 export class I18NService implements AlainI18NService {
 
-    private _default = 'zh-CN';
+    private _default:string;
 
-    private _langs = [
-        { code: 'en', text: 'English' },
-        { code: 'zh-CN', text: '中文' }
-    ];
+    private _langs:any[];
 
     constructor(
         settings: SettingsService,
         private nzLocalService: NzLocaleService,
         private translate: TranslateService,
-        private injector: Injector
+        private injector: Injector,
+        config: SipAlainConfig
     ) {
+        this._langs = config.i18n.langs;
+        this._default = config.i18n.default;
         const defaultLan = settings.layout.lang || translate.getBrowserLang();
         const lans = this._langs.map(item => item.code);
         this._default = lans.includes(defaultLan) ? defaultLan : lans[0];

@@ -14,11 +14,21 @@ export class SipConfigService implements SipAlainConfig {
 
     constructor(private injector: Injector) { }
 
+    site = {
+        loginUrl: '/themes/metronic/modules/common/login/login_sso.jsp?returnUrl=/',
+        logoutUrl: ''
+    };
+
     appDataPath = 'assets/app-data.json';
 
     i18n = {
         prefix: 'assets/i18n/',
-        suffix: '.json'
+        suffix: '.json',
+        default: 'zh-CN',
+        langs: [
+            { code: 'en', text: 'English' },
+            { code: 'zh-CN', text: '中文' }
+        ]
     };
 
     i18nLoader(http: HttpClient) {
@@ -51,7 +61,8 @@ export class SipConfigService implements SipAlainConfig {
                 // }
                 break;
             case 401: // 未登录状态码
-                this.goTo('/passport/login');
+                //this.goTo('/passport/login');
+                location.href = this.site.logoutUrl;
                 break;
             case 403:
             case 404:
@@ -84,12 +95,6 @@ export class SipConfigService implements SipAlainConfig {
             catchError((err: HttpErrorResponse) => this.handleData(err))
         );
     }
-
-
-    site = {
-        loginUrl: '/themes/metronic/modules/common/login/login_sso.jsp?returnUrl=',
-        logoutUrl: ''
-    };
 
     page = {
         /**只有一个子页面 */
