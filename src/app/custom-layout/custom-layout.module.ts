@@ -9,7 +9,6 @@ const COMPONENTS = [
 
 // passport
 import { LayoutPassportComponent } from './passport/passport.component';
-import { SipLayoutCoreModule } from './sip/core/sip-layout-core.module';
 import { DefaultModule } from './default/default.module';
 import { ReuseTabLayoutModule } from './reuse-tab/reuseTab-layout.module';
 
@@ -21,7 +20,6 @@ const PASSPORT = [
 @NgModule({
     imports: [
         SharedModule,
-        SipLayoutCoreModule,
         DefaultModule,
         ReuseTabLayoutModule
     ],
@@ -32,7 +30,6 @@ const PASSPORT = [
     ],
     exports: [
         ...PASSPORT,
-        SipLayoutCoreModule,
         DefaultModule,
         ReuseTabLayoutModule
     ]

@@ -4,33 +4,31 @@ import { HttpRequest, HttpHandler, HttpResponse, HttpErrorResponse, HttpClient }
 import { of } from 'rxjs/observable/of';
 import { mergeMap, catchError } from 'rxjs/operators';
 import { environment } from '@env/environment';
-import { NzMessageService } from 'ng-zorro-antd';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ReuseTabService, ReuseTabMatchMode } from '@delon/abc';
 
 @Injectable()
 export class SipConfigService implements SipAlainConfig {
 
     constructor(private injector: Injector) { }
 
-    appDataPath: 'assets/app-data.json'
+    appDataPath = 'assets/app-data.json';
 
     i18n = {
         prefix: 'assets/i18n/',
         suffix: '.json'
     };
 
-    i18nLoader(http:HttpClient) {
+    i18nLoader(http: HttpClient) {
         return new TranslateHttpLoader(http, this.i18n.prefix, this.i18n.suffix);
     }
 
     startup() {
+        let reuseTabSrv: ReuseTabService = this.injector.get(ReuseTabService);
+        reuseTabSrv.mode = ReuseTabMatchMode.URL;
         return Promise.resolve(null);
-    }
-
-    get msg(): NzMessageService {
-        return this.injector.get(NzMessageService);
     }
 
     private goTo(url: string) {

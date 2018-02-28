@@ -4,6 +4,7 @@ import { SipConfigService } from './sip-config.service';
 import { SipCacheService } from './sip-cache.service';
 import { SipRestService } from './sip-rest.service';
 import { SipEventService } from './sip-event.service';
+import { SipAppContainerService } from './sip-app-container.service';
 
 @NgModule({
     imports: [
@@ -14,7 +15,8 @@ import { SipEventService } from './sip-event.service';
         SipConfigService,
         SipCacheService,
         SipRestService,
-        SipEventService
+        SipEventService,
+        SipAppContainerService
     ],
     exports:[],
     entryComponents:[]

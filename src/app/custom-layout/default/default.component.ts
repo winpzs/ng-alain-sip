@@ -3,8 +3,7 @@ import { Router, NavigationEnd, RouteConfigLoadStart, NavigationError } from '@a
 import { NzMessageService } from 'ng-zorro-antd';
 import { ScrollService, MenuService, SettingsService } from '@delon/theme';
 import { ReuseTabComponent, ReuseTabService, ReuseTabMatchMode } from '@delon/abc';
-import { SipLayout } from './../sip/sip-layout';
-import { SipAppContainerService } from '../sip/core/services/sip-app-container.service';
+import { SipLayout } from 'app/sip-alain';
 
 @Component({
     selector: 'layout-default',
@@ -21,14 +20,7 @@ export class LayoutDefaultComponent implements SipLayout {
         scroll: ScrollService,
         private _message: NzMessageService,
         public menuSrv: MenuService,
-        public settings: SettingsService,
-        reuseTabSrv: ReuseTabService,
-        vcRef: ViewContainerRef,
-        vc: SipAppContainerService) {
-
-        reuseTabSrv.mode = ReuseTabMatchMode.URL;
-
-        vc.init(vcRef);
+        public settings: SettingsService) {
 
         // scroll to top in change page
         router.events.subscribe(evt => {

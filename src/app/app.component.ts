@@ -1,7 +1,8 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit, ViewContainerRef } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { ThemesService, SettingsService, TitleService } from '@delon/theme';
 import { filter } from 'rxjs/operators';
+import { SipAppContainerService } from 'app/sip-alain';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,10 @@ export class AppComponent implements OnInit {
     private theme: ThemesService,
     private settings: SettingsService,
     private router: Router,
-    private titleSrv: TitleService) {
+    private titleSrv: TitleService,
+    contain:SipAppContainerService,
+    vcRef: ViewContainerRef) {
+      contain.init(vcRef);
   }
 
   ngOnInit() {

@@ -5,11 +5,13 @@ export * from './core/extends/decorators';
 export * from './core/extends/sip-validators';
 export * from './core/extends/sip-helper';
 export * from './core/extends/sip-alain-config';
+export * from './core/extends/sip-layout';
 
 export * from './core/services/sip-config.service';
 export * from './core/services/sip-cache.service';
 export * from './core/services/sip-rest.service';
 export * from './core/services/sip-event.service';
+export * from './core/services/sip-app-container.service';
 
 export * from './shared/components/menu/contextmenu.component';
 export * from './shared/components/menu/menu-group.component';
