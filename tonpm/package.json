@@ -1,0 +1,44 @@
+{
+  "name": "sip-alain",
+  "version": "0.0.1",
+  "description": "sip-alain",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/winpzs/ng-alain-sip.git"
+  },
+  "keywords": [
+    "sip-alain"
+  ],
+  "author": "cmpxs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/winpzs/ng-alain-sip/issues"
+  },
+  "homepage": "https://github.com/winpzs/ng-alain-sip#readme",
+  "dependencies": {
+    "@angular/animations": "^5.0.0",
+    "@angular/common": "^5.0.0",
+    "@angular/compiler": "^5.0.0",
+    "@angular/core": "^5.0.0",
+    "@angular/forms": "^5.0.0",
+    "@angular/http": "^5.0.0",
+    "@angular/platform-browser": "^5.0.0",
+    "@angular/platform-browser-dynamic": "^5.0.0",
+    "@angular/router": "^5.0.0",
+    "@delon/abc": "^0.6.5",
+    "@delon/acl": "^0.6.5",
+    "@delon/auth": "^0.6.5",
+    "@delon/theme": "^0.6.5",
+    "@delon/mock": "^0.6.5",
+    "@delon/cache": "^0.6.5",
+    "@ngx-translate/core": "^9.0.0",
+    "@ngx-translate/http-loader": "^2.0.0",
+    "ng-tree-antd": "^2.2.2",
+    "ng-zorro-antd": "^0.6.5",
+    "rxjs": "^5.5.5"
+  }
+}

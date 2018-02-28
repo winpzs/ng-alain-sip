@@ -37,23 +37,16 @@ gulp.task('build', function () {
             name: 'sip-alain',
             sourceMap: true
             //globals: globals
-        }).then(function(){
-            gulp.src('./dist/sip-alain/**').pipe(gulp.dest('./dist'));
         });
     })
 });
 
-// gulp.task('todemo', function () {
-//     return gulp.src(['dist/**'])
-//         .pipe(gulp.dest('../cmpx-demo/node_modules/cmpx'));
-// });
+gulp.task('movebuildfile', function () {
+    return gulp.src('./dist/sip-alain/**').pipe(gulp.dest('./dist'));
+});
 
-// gulp.task('tonpm', function () {
-//     return gulp.src(['dist/**'])
-//         .pipe(gulp.dest('../cmpx-npm/cmpx'));
-// });
+gulp.task('tonpm', function () {
+    return gulp.src(['tonpm/**'])
+        .pipe(gulp.dest('dist'));
+});
 
-// gulp.task('tomvc', function () {
-//     return gulp.src(['dist/**'])
-//         .pipe(gulp.dest('../cmpx-mvc/node_modules/cmpx'));
-// });

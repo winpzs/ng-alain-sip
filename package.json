@@ -27,8 +27,8 @@
     "e2e": "ng e2e",
     "test": "ng test -sr -sm=false",
     "test-coverage": "ng test -sr -cc -sm=false",
-    "siptsc": "tsc -p .",
-    "sipbuild": "rimraf dist && gulp build && rimraf dist/sip-alain"
+    "sipbuild": "rimraf dist && gulp build && gulp movebuildfile && rimraf dist/sip-alain",
+    "tonpm":"npm run sipbuild && gulp tonpm && npm publish dist"
   },
   "dependencies": {
     "@angular/animations": "^5.0.0",
