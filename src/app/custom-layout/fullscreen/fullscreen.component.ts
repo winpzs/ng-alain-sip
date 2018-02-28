@@ -1,7 +1,6 @@
 import { Component, ViewContainerRef, forwardRef } from '@angular/core';
 import { ReuseTabComponent } from '@delon/abc';
-import { SipLayout } from '../sip/sip-layout';
-import { SipAppContainerService } from '../sip/core/services/sip-app-container.service';
+import { SipLayout } from 'app/sip-alain';
 
 @Component({
     selector: 'layout-fullscreen',
@@ -12,9 +11,4 @@ export class LayoutFullScreenComponent implements SipLayout {
 
     tab: ReuseTabComponent;
 
-    constructor(
-        vcRef: ViewContainerRef,
-        vc: SipAppContainerService) {
-        vc.init(vcRef);
-    }
 }

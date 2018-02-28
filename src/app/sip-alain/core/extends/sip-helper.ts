@@ -1049,10 +1049,10 @@ export class SipUiBase extends SipParent {
      * 动态添加模板
      * @param tmpl TemplateRef内容
      * @param context 传入模板的参数内容
-     * @param isLayout 是否添加到layout, 默认添加到本组件
+     * @param isApp 是否添加到App, 默认为(false)添加到本组件
     */
-    $appendTemplate(tmpl: TemplateRef<any>, context?: any, isLayout?: boolean): ViewRef {
-        if (isLayout) {
+    $appendTemplate(tmpl: TemplateRef<any>, context?: any, isApp?: boolean): ViewRef {
+        if (isApp) {
             let appContainer: SipAppContainerService = this.$injector(SipAppContainerService);
             if (appContainer) return appContainer.appendTemplate(tmpl, context);
         } else {

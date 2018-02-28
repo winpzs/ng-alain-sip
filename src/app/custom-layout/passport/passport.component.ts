@@ -1,7 +1,6 @@
 import { Component, ViewContainerRef, forwardRef } from '@angular/core';
 import { ReuseTabComponent } from '@delon/abc';
-import { SipLayout } from '../sip/sip-layout';
-import { SipAppContainerService } from '../sip/core/services/sip-app-container.service';
+import { SipLayout } from 'app/sip-alain';
 
 @Component({
     selector: 'layout-passport',
@@ -12,12 +11,6 @@ import { SipAppContainerService } from '../sip/core/services/sip-app-container.s
 export class LayoutPassportComponent implements SipLayout {
 
     tab: ReuseTabComponent;
-
-    constructor(
-        vcRef: ViewContainerRef,
-        vc: SipAppContainerService) {
-        vc.init(vcRef);
-    }
 
     links = [
         {

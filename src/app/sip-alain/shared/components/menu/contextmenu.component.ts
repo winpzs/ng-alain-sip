@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild, ViewContainerRef, TemplateRef, ComponentRef, Input, ViewRef, EventEmitter, Output } from '@angular/core';
 import { IMenuItem } from './menu-item';
-import { SipAppContainerService } from '../../../../custom-layout/sip/core/services/sip-app-container.service';
-import { EventAfterViewInit, EventDestroy } from '../../../core/extends/decorators';
 import { Lib } from '../../../core/extends/lib';
+import { SipAppContainerService } from '../../../core/services/sip-app-container.service';
+import { SipComponent, SipNgInit, SipNgDestroy } from '../../../core/extends/sip-helper';
 
 export interface IContextMenu {
     width?: string;
@@ -20,10 +20,11 @@ export declare function ContextMenuFactory(menu: IContextMenu): void;
   </div></ng-template>`,
     styles: [`.sip-contextmenu {position: absolute;z-index:10000;}`]
 })
-export class ContextmenuComponent {
+export class ContextmenuComponent extends SipComponent {
     @ViewChild('tmpl') tmpl: TemplateRef<any>;
 
-    constructor(private _viewRef: ViewContainerRef, private _vc: SipAppContainerService) {
+    constructor(vcf: ViewContainerRef) {
+        super(vcf);
     }
 
     private pElement: HTMLElement;
@@ -47,13 +48,13 @@ export class ContextmenuComponent {
         return false;
     }
 
-    @EventAfterViewInit()
-    private init() {
-        this.pElement = this._viewRef.element.nativeElement.parentNode;
+    @SipNgInit()
+    private _init() {
+        this.pElement = this.$vcf.element.nativeElement.parentNode;
         if (!this.pElement) return;
         this.pElement.addEventListener('contextmenu', this._contextmenu_fn);
         document.documentElement.addEventListener('mousedown', this._doc_mousedown);
-    }
+   }
 
     private _contextmenu_fn = (e: MouseEvent) => {
         e.preventDefault();
@@ -78,8 +79,8 @@ export class ContextmenuComponent {
         this.hide();
     }
 
-    @EventDestroy()
-    _destroy() {
+    @SipNgDestroy()
+    private _destroy() {
         if (!this.pElement) return;
         document.documentElement.removeEventListener('mousedown', this._doc_mousedown);
         this.pElement.removeEventListener('contextmenu', this._contextmenu_fn);
@@ -95,7 +96,7 @@ export class ContextmenuComponent {
         this.onShow.emit(menu);
         this.menu = menu;
         if (!this._container)
-            this._container = this._vc.appendTemplate(this.tmpl);
+            this._container = this.$appendTemplate(this.tmpl, null, true);
     }
 
     hide() {
