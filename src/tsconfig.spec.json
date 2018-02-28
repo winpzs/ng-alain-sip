@@ -30,6 +30,6 @@
   "include": [
     "**/*.spec.ts",
     "**/*.d.ts",
-    "./src/app/delon/**"
+    "./app/delon/**"
   ]
 }

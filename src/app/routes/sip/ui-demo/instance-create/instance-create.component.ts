@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 
-import { SipPage, SipProvidePage } from '@sip/sip-core/extends/extends.module';
+import { SipPage, SipProvidePage } from 'app/sip-alain';
 
 @Component({
 	selector: 'sip-instance-create',

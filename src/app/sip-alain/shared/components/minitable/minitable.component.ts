@@ -280,7 +280,7 @@ export class MinitableManager<T=any> implements IMinitableManager<T> {
 
 @Component({
     selector: 'sip-minitable',
-    templateUrl: `<nz-table #nzTable [nzAjaxData]="rows" [nzSize]="'middle'" [nzIsPagination]="false" [nzLoading]="_loading" [nzTotal]="total" [(nzPageIndex)]="pageIndex"
+    template: `<nz-table #nzTable [nzAjaxData]="rows" [nzSize]="'middle'" [nzIsPagination]="false" [nzLoading]="_loading" [nzTotal]="total" [(nzPageIndex)]="pageIndex"
     (nzPageIndexChange)="_load()" [(nzPageSize)]="pageSize" (nzPageSizeChange)="_load()">
     <thead nz-thead>
         <tr>

@@ -1,6 +1,6 @@
 import { Component, ViewContainerRef } from '@angular/core';
-import { SipProvidePage, SipPage, SipAccess, SipAccessManager, Lib, SipAccessItem, SipOnShow } from '@sip/sip-core/extends/extends.module';
-import { MinitableManager } from '@sip/sip-shared/components/sip-components.module';
+import { SipProvidePage, SipPage, SipAccess, SipAccessManager, Lib, SipAccessItem, SipOnShow } from 'app/sip-alain';
+import { MinitableManager } from 'app/sip-alain';
 import { ListData } from './../ui-demo-shared/model/list-data';
 
 @Component({

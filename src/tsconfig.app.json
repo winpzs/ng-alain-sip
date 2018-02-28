@@ -23,6 +23,6 @@
   "exclude": [
     "test.ts",
     "**/*.spec.ts",
-    "./src/app/delon/**"
+    "./app/delon/**"
   ]
 }

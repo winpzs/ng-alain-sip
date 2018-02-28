@@ -1,7 +1,7 @@
 import { Component, ViewContainerRef } from '@angular/core';
 
-import { SipProvidePage, SipPage, Lib, SipSubscribe, SipAccessManager, SipAccessItem, SipAccess } from '@sip/sip-core/extends/extends.module';
-import { MinitableManager } from '@sip/sip-shared/components/sip-components.module';
+import { SipProvidePage, SipPage, Lib, SipSubscribe, SipAccessManager, SipAccessItem, SipAccess } from 'app/sip-alain';
+import { MinitableManager } from 'app/sip-alain';
 
 import { TestModalComponent } from './test-modal/test-modal.component';
 import { TableData } from '../ui-demo-shared/model/table-data';

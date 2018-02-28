@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { SettingsService, MenuService, TitleService } from '@delon/theme';
-import { I18NService } from '@core/i18n/i18n.service';
+import { I18NService } from 'app/sip-alain';
 
 @Component({
     selector: 'header-i18n',

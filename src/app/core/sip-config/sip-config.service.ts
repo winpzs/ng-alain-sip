@@ -1,13 +1,13 @@
 import { Injectable, Injector } from '@angular/core';
 import { SipAlainConfig } from '../../sip-alain';
-import { HttpRequest, HttpHandler, HttpResponse, HttpErrorResponse } from '@angular/common/http';
+import { HttpRequest, HttpHandler, HttpResponse, HttpErrorResponse, HttpClient } from '@angular/common/http';
 import { of } from 'rxjs/observable/of';
 import { mergeMap, catchError } from 'rxjs/operators';
 import { environment } from '@env/environment';
 import { NzMessageService } from 'ng-zorro-antd';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { _HttpClient } from '@delon/theme';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 @Injectable()
 export class SipConfigService implements SipAlainConfig {
@@ -16,13 +16,13 @@ export class SipConfigService implements SipAlainConfig {
 
     appDataPath: 'assets/app-data.json'
 
-    i18n: {
+    i18n = {
         prefix: 'assets/i18n/',
         suffix: '.json'
     };
 
-    i18nLoader() {
-
+    i18nLoader(http:HttpClient) {
+        return new TranslateHttpLoader(http, this.i18n.prefix, this.i18n.suffix);
     }
 
     startup() {

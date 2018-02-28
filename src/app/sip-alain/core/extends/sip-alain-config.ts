@@ -1,13 +1,13 @@
 import { Lib } from './lib';
 import { Type } from '@angular/core';
-import { HttpRequest, HttpHandler } from '@angular/common/http';
+import { HttpRequest, HttpHandler, HttpClient } from '@angular/common/http';
 
 export abstract class SipAlainConfig {
     i18n: {
         prefix: string;
         suffix: string;
     };
-    i18nLoader:any;
+    i18nLoader: (http: HttpClient)=> any;
     appDataPath: string;
     startup:()=>Promise<any>;
     intercept:(req: HttpRequest<any>, next: HttpHandler)=>any;

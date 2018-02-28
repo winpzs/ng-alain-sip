@@ -22,6 +22,7 @@ import { DefaultInterceptor } from './delon/net/default.interceptor';
 import { DelonModule } from './delon/delon.module';
 import { SipAlainConfig, SetSipAlainConfig, GetSipAlainConfig } from './core/extends/sip-alain-config';
 import { StartupService } from './delon/startup/startup.service';
+import { SipAlainCoreModule } from './core/sip-alain-core.module';
 
 export function StartupServiceFactory(startupService: StartupService, config:SipAlainConfig): Function {
     return () => startupService.load(config).then(function () { return config.startup(); });
@@ -30,6 +31,7 @@ export function StartupServiceFactory(startupService: StartupService, config:Sip
 @NgModule({
     imports: [
         CommonModule,
+        SipAlainCoreModule,
         DelonModule.forRoot(),
         // i18n
         TranslateModule.forRoot({
@@ -41,7 +43,9 @@ export function StartupServiceFactory(startupService: StartupService, config:Sip
         }),
         HttpClientModule
     ],
-    providers: [],
+    providers: [
+        
+    ],
     exports: [
         DelonModule
     ]
@@ -57,7 +61,8 @@ export class SipAlainModule {
         return {
             ngModule: SipAlainModule,
             providers: [
-                { provide: SipAlainConfig, useValue: config },
+                I18NService,
+                { provide: SipAlainConfig, useClass: config },
                 { provide: LOCALE_ID, useValue: 'zh-Hans' },
                 { provide: HTTP_INTERCEPTORS, useClass: SimpleInterceptor, multi: true },
                 { provide: HTTP_INTERCEPTORS, useClass: DefaultInterceptor, multi: true },

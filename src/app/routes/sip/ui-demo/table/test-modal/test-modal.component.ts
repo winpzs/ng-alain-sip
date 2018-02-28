@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import { SipModal, SipProvideModal, SipNgInit } from '@sip/sip-core/extends/extends.module';
+import { SipModal, SipProvideModal, SipNgInit } from 'app/sip-alain';
 
 @Component({
   selector: 'sip-test-modal',

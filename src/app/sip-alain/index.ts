@@ -30,7 +30,7 @@ export * from './shared/components/page/page-toolbar.component';
 export * from './shared/components/page/page.component';
 export * from './shared/components/searchConent.component';
 
-
-export * from './core/sip-alain-core.module';
 export * from './shared/sip-alain-shared.module';
 export * from './sip-alain.module';
+
+export * from './delon/i18n/i18n.service';

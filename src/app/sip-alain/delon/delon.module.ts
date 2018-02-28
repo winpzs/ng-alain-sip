@@ -172,8 +172,6 @@ import { AlainAuthModule } from '@delon/auth';
 import { AlainACLModule } from '@delon/acl';
 import { DelonCacheModule } from '@delon/cache';
 
-import { I18NService } from './i18n/i18n.service';
-
 @NgModule({
     imports: [
         NgZorroAntdModule.forRoot(),
@@ -194,8 +192,7 @@ import { I18NService } from './i18n/i18n.service';
         // acl
         AlainACLModule.forRoot(),
         // cache
-        DelonCacheModule.forRoot(),
-        I18NService
+        DelonCacheModule.forRoot()
     ]
 })
 export class DelonModule {

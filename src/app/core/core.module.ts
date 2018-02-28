@@ -1,12 +1,10 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 
-import { SipAlainCoreModule } from '../sip-alain';
 import { SipConfigService } from './sip-config/sip-config.service';
 
 @NgModule({
     providers: [
-        SipAlainCoreModule,
         SipConfigService
     ]
 })
