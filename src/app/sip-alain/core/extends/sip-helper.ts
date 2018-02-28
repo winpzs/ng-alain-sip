@@ -10,10 +10,11 @@ import { HttpHeaders, HttpParams } from "@angular/common/http";
 import { map } from 'rxjs/operators';
 import { ReuseTabService } from "@delon/abc";
 import { FormBuilder, FormGroup } from "@angular/forms";
-import { SipConfigService } from '../services/sip-config.service';
+
 import { SipEventService } from '../services/sip-event.service';
 import { SipAppContainerService } from '../services/sip-app-container.service';
 import { SipLayout } from "./sip-layout";
+import { SipAlainConfig } from './sip-alain-config';
 
 let undef;
 
@@ -831,8 +832,8 @@ export class SipParent {
         console.log.apply(console, arguments);
     }
 
-    /**SipConfigService */
-    @SipInject(SipConfigService) $config: SipConfigService;
+    /**SipConfig */
+    @SipInject(SipAlainConfig) $config: SipAlainConfig;
 
     //#region Observable
 

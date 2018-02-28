@@ -102,7 +102,7 @@ export class SipConfigService implements SipAlainConfig {
         /**
          * rest url 改造路径
          */
-        mapPath: function (path) {
+        mapPath: function (path:string) {
             return path;
         },
         /**
@@ -126,6 +126,7 @@ export class SipConfigService implements SipAlainConfig {
         } {
             return rs;
         },
+
         sql: {
             /**
              * sql数据，有分页

@@ -6,10 +6,10 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/throw';
 
-import { SipConfigService } from './sip-config.service';
 import { Lib } from '../extends/lib';
 import { HttpHeaders } from '@angular/common/http';
 import '../extends/rxjs';
+import { SipConfigService } from '@core/sip-config/sip-config.service';
 
 //#region rest helper
 
