@@ -172,14 +172,7 @@ import { AlainAuthModule } from '@delon/auth';
 import { AlainACLModule } from '@delon/acl';
 import { DelonCacheModule } from '@delon/cache';
 
-// region: global config functions
-
-// import { SimpleTableConfig } from '@delon/abc';
-// export function simpleTableConfig(): SimpleTableConfig {
-//     return { ps: 20 };
-// }
-
-// endregion
+import { I18NService } from './i18n/i18n.service';
 
 @NgModule({
     imports: [
@@ -201,7 +194,8 @@ import { DelonCacheModule } from '@delon/cache';
         // acl
         AlainACLModule.forRoot(),
         // cache
-        DelonCacheModule.forRoot()
+        DelonCacheModule.forRoot(),
+        I18NService
     ]
 })
 export class DelonModule {

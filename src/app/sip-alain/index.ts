@@ -4,6 +4,7 @@ export * from './core/extends/rxjs';
 export * from './core/extends/decorators';
 export * from './core/extends/sip-validators';
 export * from './core/extends/sip-helper';
+export * from './core/extends/sip-alain-config';
 
 export * from './core/services/sip-config.service';
 export * from './core/services/sip-cache.service';
@@ -28,6 +29,7 @@ export * from './shared/components/page/page-header.component';
 export * from './shared/components/page/page-toolbar.component';
 export * from './shared/components/page/page.component';
 export * from './shared/components/searchConent.component';
+
 
 export * from './core/sip-alain-core.module';
 export * from './shared/sip-alain-shared.module';
