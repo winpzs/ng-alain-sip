@@ -8,14 +8,12 @@ import { TableComponent } from './table/table.component';
 import { ListComponent } from './list/list.component';
 import { InstanceCreateComponent } from './instance-create/instance-create.component';
 import { BaseformComponent } from './baseform/baseform.component';
-import { SipSharedModule } from '@sip/sip-shared/sip-shared.module';
 import { ServerListComponent } from './server-list/server-list.component';
 
 @NgModule({
     imports: [
         CommonModule,
         SharedModule,
-        SipSharedModule,
         UiDemoSharedModule
     ],
     declarations: [

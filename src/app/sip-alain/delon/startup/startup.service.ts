@@ -7,6 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { MenuService, SettingsService, TitleService } from '@delon/theme';
 import { ACLService } from '@delon/acl';
 import { I18NService } from '../i18n/i18n.service';
+import { SipAlainConfig } from '../../core/extends/sip-alain-config';
 
 /**
  * 用于应用启动时
@@ -26,13 +27,13 @@ export class StartupService {
 
     }
 
-    load(): Promise<any> {
+    load(config:SipAlainConfig): Promise<any> {
         // only works with promises
         // https://github.com/angular/angular/issues/15088
         return new Promise((resolve, reject) => {
             zip(
-                this.httpClient.get(`assets/i18n/${this.i18n.defaultLang}.json`),
-                this.httpClient.get('assets/app-data.json')
+                this.httpClient.get(`${config.i18n.prefix}${this.i18n.defaultLang}${config.i18n.suffix}`),
+                this.httpClient.get(config.appDataPath)
             ).pipe(
                 // 接收其他拦截器后产生的异常消息
                 catchError(([langData, appData]) => {

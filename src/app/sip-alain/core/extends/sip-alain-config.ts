@@ -1,18 +1,24 @@
 import { Lib } from './lib';
-import { HttpClient } from '@angular/common/http';
+import { Type } from '@angular/core';
+import { HttpRequest, HttpHandler } from '@angular/common/http';
 
-export interface ISipAlainConfig {
-    TranslateHttpLoaderFactory?:(http: HttpClient)=>any;
-    [key: string]: any;
+export abstract class SipAlainConfig {
+    i18n: {
+        prefix: string;
+        suffix: string;
+    };
+    i18nLoader:any;
+    appDataPath: string;
+    startup:()=>Promise<any>;
+    intercept:(req: HttpRequest<any>, next: HttpHandler)=>any;
 }
 
-export const SipAlainConfig: ISipAlainConfig = {
-    i18n: {
-        prefix: 'assets/i18n/',
-        suffix: '.json'
-    }
+let _sipAlainConfig: Type<SipAlainConfig> = null;
+
+export function SetSipAlainConfig(config: Type<SipAlainConfig>) {
+    _sipAlainConfig = config;
 };
 
-export function SetSipAlainConfig(config: ISipAlainConfig) {
-    Lib.extend(SipAlainConfig, config);
+export function GetSipAlainConfig():Type<SipAlainConfig> {
+    return _sipAlainConfig
 };

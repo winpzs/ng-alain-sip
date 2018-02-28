@@ -15,12 +15,7 @@ import { LayoutModule } from './layout/layout.module';
 
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
-SetSipAlainConfig({
-    TranslateHttpLoaderFactory:function(http: HttpClient){
-        return new TranslateHttpLoader(http, `assets/i18n/`, '.json');
-    }
-});
+import { SipConfigService } from './core/sip-config/sip-config.service';
 
 @NgModule({
     declarations: [
@@ -29,12 +24,12 @@ SetSipAlainConfig({
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
-        ...SipAlainModule.forRoot(),
+        SipAlainModule.forRoot(SipConfigService),
         CoreModule,
         SharedModule,
         LayoutModule,
-        RoutesRoutingModule,
-        CustomLayoutModule
+        CustomLayoutModule,
+        RoutesRoutingModule
     ],
     providers: [
     ],

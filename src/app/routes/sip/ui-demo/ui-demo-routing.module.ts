@@ -25,11 +25,7 @@ const routes: Routes = [
 	},
     { path: 'baseform', component: BaseformComponent },
     { path: 'instance-create', component: InstanceCreateComponent },
-    { path: 'server-list', component: ServerListComponent },
-    {
-        path: 'test',
-        loadChildren: './test/test-routing.module#TestRoutingModule'
-    }
+    { path: 'server-list', component: ServerListComponent }
 ];
 
 @NgModule({
