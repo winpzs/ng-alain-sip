@@ -9,7 +9,7 @@ import 'rxjs/add/observable/throw';
 import { Lib } from '../extends/lib';
 import { HttpHeaders } from '@angular/common/http';
 import '../extends/rxjs';
-import { SipConfigService } from '@core/sip-config/sip-config.service';
+import { SipAlainConfig } from '../extends/sip-alain-config';
 
 //#region rest helper
 
@@ -111,7 +111,7 @@ export interface ISipRestDict {
 @Injectable()
 export class SipRestService {
 
-    constructor(private config: SipConfigService,
+    constructor(private config: SipAlainConfig,
         private http: HttpClient) { }
 
     /**
