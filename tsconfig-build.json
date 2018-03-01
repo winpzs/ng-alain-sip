@@ -12,6 +12,7 @@
         "listFiles": true,
         "alwaysStrict": true,
         "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
         "outDir": "./dist",
         "baseUrl": "./src",
         "typeRoots": [

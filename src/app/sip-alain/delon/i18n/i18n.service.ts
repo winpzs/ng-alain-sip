@@ -17,9 +17,9 @@ export class I18NService implements AlainI18NService {
         settings: SettingsService,
         private nzLocalService: NzLocaleService,
         private translate: TranslateService,
-        private injector: Injector,
-        config: SipAlainConfig
+        private injector: Injector
     ) {
+        let config: SipAlainConfig = this.injector.get(SipAlainConfig);
         this._langs = config.i18n.langs;
         this._default = config.i18n.default;
         const defaultLan = settings.layout.lang || translate.getBrowserLang();

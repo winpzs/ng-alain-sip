@@ -2,7 +2,8 @@ var gulp = require('gulp'),
     typescript = require('gulp-typescript'),
     sourcemaps = require('gulp-sourcemaps'),
     rollup = require('rollup'),
-    rollupTypescript = require('rollup-plugin-typescript2');
+    rollupTypescript = require('rollup-plugin-typescript2'),
+    nodeResolve = require('rollup-plugin-node-resolve-angular');
 
 // const globals = {
 //     '@angular/core': 'ng.core',
@@ -26,6 +27,7 @@ gulp.task('build', function () {
     return rollup.rollup({
         input: "./src/app/sip-alain/index.ts",
         plugins: [
+            // nodeResolve({ jsnext: true, main: true }),
             rollupTypescript({
                 tsconfig: './tsconfig-build.json'
             })
@@ -35,7 +37,7 @@ gulp.task('build', function () {
             format: "umd",
             file: './dist/index.js',
             name: 'sip-alain',
-            sourceMap: true
+            sourcemap: true
             //globals: globals
         });
     })
@@ -45,8 +47,13 @@ gulp.task('movebuildfile', function () {
     return gulp.src('./dist/sip-alain/**').pipe(gulp.dest('./dist'));
 });
 
-gulp.task('tonpm', function () {
+gulp.task('npmprepublish', function () {
     return gulp.src(['tonpm/**'])
         .pipe(gulp.dest('dist'));
+});
+
+gulp.task('npmtotest', function () {
+    return gulp.src(['dist/**'])
+        .pipe(gulp.dest('E:\\Projects\\angular\\ng-alain-sip\\node_modules\\sip-alain'));
 });
 

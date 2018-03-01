@@ -27,8 +27,9 @@
     "e2e": "ng e2e",
     "test": "ng test -sr -sm=false",
     "test-coverage": "ng test -sr -cc -sm=false",
-    "sipbuild": "rimraf dist && gulp build && gulp movebuildfile && rimraf dist/sip-alain",
-    "tonpm":"npm run sipbuild && gulp tonpm && npm publish dist"
+    "npmbuild": "rimraf dist && gulp build && gulp movebuildfile && rimraf dist/sip-alain",
+    "npmpublish": "npm run npmbuild && gulp npmprepublish && npm publish dist",
+    "npmtotest": "npm run npmbuild && gulp npmtotest"
   },
   "dependencies": {
     "@angular/animations": "^5.0.0",
@@ -109,6 +110,7 @@
     "protractor": "~5.1.2",
     "rimraf": "^2.6.2",
     "rollup": "^0.56.3",
+    "rollup-plugin-node-resolve-angular": "^2.0.3",
     "rollup-plugin-typescript2": "^0.11.1",
     "stylelint": "^8.2.0",
     "stylelint-config-standard": "^17.0.0",
